@@ -1,0 +1,9 @@
+__debug_bin*
+*_new.sql
+*.bak
+*.json
+*.log
+*.yml
+1cv8metadata
+json_viewer.py
+!.vscode/*.json
