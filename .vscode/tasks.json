@@ -1,0 +1,35 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "go build",
+      "type": "shell",
+      "group": "build",
+      "command": "go build -ldflags=\"-s\" ."
+    },
+    {
+      "label": "strip",
+      "type": "shell",
+      "group": "build",
+      "command": "strip 1cv8metadata"
+    },
+    {
+      "label": "upx",
+      "type": "shell",
+      "group": "build",
+      "command": "upx -9 1cv8metadata"
+    },
+    {
+      "label": "build",
+      "dependsOn": [
+        "go build",
+        "strip",
+        "upx"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    }
+  ]
+}
