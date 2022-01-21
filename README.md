@@ -1,4 +1,8 @@
 # Преобразование SQL-запосов 1Cv8
+[![tag](https://img.shields.io/github/v/tag/mopo3ilo/1cv8metadata?sort=semver)](https://github.com/mopo3ilo/1cv8metadata/tags)
+[![go version](https://img.shields.io/github/go-mod/go-version/mopo3ilo/1cv8metadata?label=go%20version)](https://go.dev/dl)
+[![go report](https://goreportcard.com/badge/github.com/mopo3ilo/1cv8metadata)](https://goreportcard.com/report/github.com/mopo3ilo/1cv8metadata)
+
 ## Зависимости
 - [go-mssqldb](https://github.com/denisenkom/go-mssqldb)
 - [dlgs](https://github.com/gen2brain/dlgs)
