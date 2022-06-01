@@ -4,29 +4,23 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "go build",
+      "label": "build.elf",
       "type": "shell",
       "group": "build",
-      "command": "go build -ldflags=\"-s\" ."
+      "command": "mkdir -p build && GOOS=linux GOARCH=amd64 go build -ldflags=\"-s\" -o ./1cv8metadata . && strip ./1cv8metadata && upx -9 -q ./1cv8metadata",
     },
     {
-      "label": "strip",
+      "label": "build.exe",
       "type": "shell",
       "group": "build",
-      "command": "strip 1cv8metadata"
-    },
-    {
-      "label": "upx",
-      "type": "shell",
-      "group": "build",
-      "command": "upx -9 1cv8metadata"
+      "command": "mkdir -p build && GOOS=windows GOARCH=amd64 go build -ldflags=\"-s\" -o ./1cv8metadata.exe . && strip ./1cv8metadata.exe && upx -9 -q ./1cv8metadata.exe",
     },
     {
       "label": "build",
+      "group": "build",
       "dependsOn": [
-        "go build",
-        "strip",
-        "upx"
+        "build.elf",
+        "build.exe",
       ],
       "dependsOrder": "sequence",
       "problemMatcher": []

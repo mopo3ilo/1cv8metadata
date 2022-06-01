@@ -6,5 +6,6 @@ __debug_bin*
 *.yml
 *.upx
 1cv8metadata
+1cv8metadata.exe
 json_viewer.py
 !.vscode/*.json
