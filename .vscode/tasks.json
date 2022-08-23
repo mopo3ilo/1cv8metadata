@@ -7,13 +7,13 @@
       "label": "build.elf",
       "type": "shell",
       "group": "build",
-      "command": "mkdir -p build && GOOS=linux GOARCH=amd64 go build -ldflags=\"-s\" -o ./1cv8metadata . && strip ./1cv8metadata && upx -9 -q ./1cv8metadata",
+      "command": "GOOS=linux GOARCH=amd64 go build -ldflags=\"-s\" -o ./1cv8metadata . && strip ./1cv8metadata && upx -9 -q ./1cv8metadata",
     },
     {
       "label": "build.exe",
       "type": "shell",
       "group": "build",
-      "command": "mkdir -p build && GOOS=windows GOARCH=amd64 go build -ldflags=\"-s\" -o ./1cv8metadata.exe . && strip ./1cv8metadata.exe && upx -9 -q ./1cv8metadata.exe",
+      "command": "GOOS=windows GOARCH=amd64 go build -ldflags=\"-s\" -o ./1cv8metadata.exe . && strip ./1cv8metadata.exe && upx -9 -q ./1cv8metadata.exe",
     },
     {
       "label": "build",
