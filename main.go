@@ -102,7 +102,8 @@ func main() {
 	if !ok {
 		log.Fatal("database not exist")
 	}
-	fDatabase += ".json"
+	os.MkdirAll("bases", os.ModePerm)
+	fDatabase = "bases/" + fDatabase + ".json"
 	log.Println("load metadata")
 	met, err := sql1cv8.LoadNewer(con, fDatabase)
 	if err != nil {
